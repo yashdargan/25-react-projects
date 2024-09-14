@@ -14,12 +14,17 @@ const Accordium = () => {
       <div className="w-1/4 space-y-4">
         {data && data.length > 0 ? (
           data.map((dataItems) => (
-            <div onClick={() => handleSelected(dataItems.id)} className=" cursor-pointer p-4 rounded-lg bg-teal-200 hover:bg-teal-300 transition duration-300 ease-in-out ">
+            <div
+              onClick={() => handleSelected(dataItems.id)}
+              className="cursor-pointer p-4 rounded-lg bg-teal-200 hover:bg-teal-300 transition duration-300 ease-in-out "
+            >
+              <div className="flex justify-between items-center font-semibold">
               {dataItems.question}
               <span>+</span>
-                {selected === dataItems.id ? (
-                  <div className="flex bg-lime-50">{dataItems.answere}</div>
-                ) : null}
+              </div>
+              {selected === dataItems.id ? (
+                <div className="mt-4 p-4 bg-lime-50 rounded-md border border-teal-400 transition-opacity duration-300 ease-in-out">{dataItems.answere}</div>
+              ) : null}
             </div>
           ))
         ) : (
